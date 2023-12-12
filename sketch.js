@@ -172,7 +172,7 @@ class Particle {
       if (d < 190) {
         stroke(this.color);
         //strokeWeight(3);
-        strokeWeight(random(10,12));
+        strokeWeight(random(9,11));
         // Erzeuge squiggly Line mithilfe von Perlin-Noise
         beginShape();
         for (let t = -0.005; t <= 1; t += 0.125) {
