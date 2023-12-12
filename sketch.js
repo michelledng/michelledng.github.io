@@ -172,12 +172,12 @@ class Particle {
       if (d < 210) {
         stroke(this.color);
         //strokeWeight(3);
-        strokeWeight(random(7.5,13));
+        strokeWeight(random(7,13));
         // Erzeuge squiggly Line mithilfe von Perlin-Noise
         beginShape();
         for (let t = -0.005; t <= 1; t += 0.125) {
           const x = lerp(this.pos.x, particle.pos.x, t) + noise(t * 5) * 10;
-          const y = lerp(this.pos.y, particle.pos.y, t) + noise(t * 6 + 100) * 10;
+          const y = lerp(this.pos.y, particle.pos.y, t) + noise(t * 4 + 100) * 10;
           vertex(x, y);
         }
         endShape();
