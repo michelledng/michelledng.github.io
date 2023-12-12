@@ -4,23 +4,19 @@ let cx, cy;
 let bg;
 const particles = [];
 let dragPoint = null;
-const numParticles = 40;
-const dragRadius = 140;
-let animationSpeed = 22; // Anfangsgeschwindigkeit (kann angepasst werden)
-
-let video; // Declare a variable to hold the video
+const numParticles = 60;
+const dragRadius = 110;
+let animationSpeed = 50; // Anfangsgeschwindigkeit (kann angepasst werden)
 
 function setup() {
+ 
+  //createCanvas(960, 540);
   createCanvas(windowWidth, windowHeight);
-
-  // Load the video
-  video = createVideo("WS_Wörter.mp4");
-  video.loop();
-  video.hide();
-
-  cx = width / 2;
-  cy = height / 2;
-
+  //createCanvas(1080, 1920);
+  
+    cx = width / 2;
+    cy = height / 2;
+  
   let canvas = createCanvas(windowWidth, windowHeight);
   canvas.style('touch-action', 'none');
   
@@ -36,7 +32,7 @@ function setup() {
       .catch(() => {
         //show permission dialogue only the first time
         let button = createButton("click to allow access to sensors");
-        //button.style("font-size", "24px");
+        button.style("font-size", "35px");
         button.center();
         button.mousePressed(requestAccess);
         throw error;
@@ -47,7 +43,7 @@ function setup() {
       });
   } else {
     //non IOS 13 Device
-    textSize(48);
+    textSize(50);
     //text("non ios 13 device", 100, 100);
     permissionGranted = true;
   }
@@ -74,21 +70,19 @@ function setup() {
 }
 
 function draw() {
-  // Display the video as the background
-  background(0);
-  image(video, 0, 0, width, height);
-
+  background(255);
+  
   if (!permissionGranted) return;
 
   particles.forEach((p, index) => {
-    p.update(animationSpeed);
+    p.update(animationSpeed); // Hier wird die Geschwindigkeit übergeben
     p.draw();
     p.checkParticles(particles.slice(index + 1));
   });
 
   for (let p of particles) {
     if (dragPoint === p) {
-      continue;
+      continue; // Skip the dragged point
     }
     if (mouseInCircle(p, dragRadius)) {
       cursor(HAND);
@@ -126,9 +120,9 @@ function mouseInCircle(pos, radius) {
 class Particle {
   constructor() {
     //this.pos = createVector(random(width), random(height));
-    this.pos = createVector(random(width), random(height));
+    this.pos = createVector(random(width) + 5, random(height) +2);
     this.vel = createVector(random(-0.02, 0.02), random(-0.02, 0.02));
-    this.size = 4.5;
+    this.size = 11.5;
     this.color = color(0);
   }
 
@@ -136,8 +130,8 @@ class Particle {
     // Move particles based on device motion
     const dx = constrain(rotationY, -1, 1);
     const dy = constrain(rotationX, -1, 1);
-    this.pos.x += dx * 0.45;
-    this.pos.y += dy * 0.45;
+    this.pos.x += dx * 0.90;
+    this.pos.y += dy * 0.90;
 
     this.pos.add(p5.Vector.mult(this.vel, speed)); // Use speed to control the velocity
     this.edges();
@@ -175,15 +169,15 @@ class Particle {
         return; // Skip drawing if particles are too close
       }
      
-      if (d < 100) {
+      if (d < 205) {
         stroke(this.color);
         //strokeWeight(3);
-        strokeWeight(random(4,5));
+        strokeWeight(random(7,10));
         // Erzeuge squiggly Line mithilfe von Perlin-Noise
         beginShape();
         for (let t = -0.005; t <= 1; t += 0.125) {
-          const x = lerp(this.pos.x, particle.pos.x, t) + noise(t * 3) * 10;
-          const y = lerp(this.pos.y, particle.pos.y, t) + noise(t * 3 + 100) * 10;
+          const x = lerp(this.pos.x, particle.pos.x, t) + noise(t * 5) * 10;
+          const y = lerp(this.pos.y, particle.pos.y, t) + noise(t * 6 + 100) * 10;
           vertex(x, y);
         }
         endShape();
