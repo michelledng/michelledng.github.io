@@ -4,7 +4,7 @@ let cx, cy;
 let bg;
 const particles = [];
 let dragPoint = null;
-const numParticles = 85;
+const numParticles = 75;
 const dragRadius = 110;
 let animationSpeed = 45; // Anfangsgeschwindigkeit (kann angepasst werden)
 
@@ -32,7 +32,7 @@ function setup() {
       .catch(() => {
         //show permission dialogue only the first time
         let button = createButton("click to allow access to sensors");
-        button.style("font-size", "50px");
+        button.style("font-size", "20px");
         button.center();
         button.mousePressed(requestAccess);
         throw error;
@@ -43,7 +43,7 @@ function setup() {
       });
   } else {
     //non IOS 13 Device
-    textSize(180);
+    textSize(50);
     //text("non ios 13 device", 100, 100);
     permissionGranted = true;
   }
@@ -130,8 +130,8 @@ class Particle {
     // Move particles based on device motion
     const dx = constrain(rotationY, -1, 1);
     const dy = constrain(rotationX, -1, 1);
-    this.pos.x += dx * 0.40;
-    this.pos.y += dy * 0.40;
+    this.pos.x += dx * 0.50;
+    this.pos.y += dy * 0.50;
 
     this.pos.add(p5.Vector.mult(this.vel, speed)); // Use speed to control the velocity
     this.edges();
@@ -172,7 +172,7 @@ class Particle {
       if (d < 180) {
         stroke(this.color);
         //strokeWeight(3);
-        strokeWeight(random(6,11));
+        strokeWeight(random(7.5,11));
         // Erzeuge squiggly Line mithilfe von Perlin-Noise
         beginShape();
         for (let t = -0.005; t <= 1; t += 0.125) {
