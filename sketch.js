@@ -4,7 +4,7 @@ let cx, cy;
 let bg;
 const particles = [];
 let dragPoint = null;
-const numParticles = 75;
+const numParticles = 85;
 const dragRadius = 110;
 let animationSpeed = 15; // Anfangsgeschwindigkeit (kann angepasst werden)
 
@@ -130,8 +130,8 @@ class Particle {
     // Move particles based on device motion
     const dx = constrain(rotationY, -1, 1);
     const dy = constrain(rotationX, -1, 1);
-    this.pos.x += dx * 0.80;
-    this.pos.y += dy * 0.80;
+    this.pos.x += dx * 0.90;
+    this.pos.y += dy * 0.90;
 
     this.pos.add(p5.Vector.mult(this.vel, speed)); // Use speed to control the velocity
     this.edges();
