@@ -130,8 +130,8 @@ class Particle {
     // Move particles based on device motion
     const dx = constrain(rotationY, -1, 1);
     const dy = constrain(rotationX, -1, 1);
-    this.pos.x += dx * 0.60;
-    this.pos.y += dy * 0.60;
+    this.pos.x += dx * 2;
+    this.pos.y += dy * 2;
 
     this.pos.add(p5.Vector.mult(this.vel, speed)); // Use speed to control the velocity
     this.edges();
@@ -169,7 +169,7 @@ class Particle {
         return; // Skip drawing if particles are too close
       }
      
-      if (d < 100) {
+      if (d < 170) {
         stroke(this.color);
         //strokeWeight(3);
         strokeWeight(random(7.5,11));
