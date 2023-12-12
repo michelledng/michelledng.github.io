@@ -4,7 +4,7 @@ let cx, cy;
 let bg;
 const particles = [];
 let dragPoint = null;
-const numParticles = 80;
+const numParticles = 40;
 const dragRadius = 110;
 let animationSpeed = 22; // Anfangsgeschwindigkeit (kann angepasst werden)
 
