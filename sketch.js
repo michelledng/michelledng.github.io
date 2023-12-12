@@ -32,7 +32,7 @@ function setup() {
       .catch(() => {
         //show permission dialogue only the first time
         let button = createButton("click to allow access to sensors");
-        button.style("font-size", "30px");
+        button.style("font-size", "80px");
         button.center();
         button.mousePressed(requestAccess);
         throw error;
@@ -169,15 +169,15 @@ class Particle {
         return; // Skip drawing if particles are too close
       }
      
-      if (d < 190) {
+      if (d < 200) {
         stroke(this.color);
         //strokeWeight(3);
         strokeWeight(random(6,11));
         // Erzeuge squiggly Line mithilfe von Perlin-Noise
         beginShape();
         for (let t = -0.005; t <= 1; t += 0.125) {
-          const x = lerp(this.pos.x, particle.pos.x, t) + noise(t * 3) * 10;
-          const y = lerp(this.pos.y, particle.pos.y, t) + noise(t * 3 + 100) * 10;
+          const x = lerp(this.pos.x, particle.pos.x, t) + noise(t * 5) * 10;
+          const y = lerp(this.pos.y, particle.pos.y, t) + noise(t * 6 + 100) * 10;
           vertex(x, y);
         }
         endShape();
