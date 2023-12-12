@@ -169,10 +169,10 @@ class Particle {
         return; // Skip drawing if particles are too close
       }
      
-      if (d < 120) {
+      if (d < 170) {
         stroke(this.color);
         //strokeWeight(3);
-        strokeWeight(random(14,15));
+        strokeWeight(random(12,13));
         // Erzeuge squiggly Line mithilfe von Perlin-Noise
         beginShape();
         for (let t = -0.005; t <= 1; t += 0.125) {
