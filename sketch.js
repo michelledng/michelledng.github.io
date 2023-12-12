@@ -6,7 +6,7 @@ const particles = [];
 let dragPoint = null;
 const numParticles = 55;
 const dragRadius = 110;
-let animationSpeed = 7; // Anfangsgeschwindigkeit (kann angepasst werden)
+let animationSpeed = 15; // Anfangsgeschwindigkeit (kann angepasst werden)
 
 function setup() {
  
@@ -169,7 +169,7 @@ class Particle {
         return; // Skip drawing if particles are too close
       }
      
-      if (d < 180) {
+      if (d < 190) {
         stroke(this.color);
         //strokeWeight(3);
         strokeWeight(random(7.5,11));
