@@ -130,8 +130,8 @@ class Particle {
     // Move particles based on device motion
     const dx = constrain(rotationY, -1, 1);
     const dy = constrain(rotationX, -1, 1);
-    this.pos.x += dx * 5;
-    this.pos.y += dy * 5;
+    this.pos.x += dx * 3;
+    this.pos.y += dy * 3;
 
     this.pos.add(p5.Vector.mult(this.vel, speed)); // Use speed to control the velocity
     this.edges();
