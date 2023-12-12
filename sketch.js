@@ -6,7 +6,7 @@ const particles = [];
 let dragPoint = null;
 const numParticles = 85;
 const dragRadius = 110;
-let animationSpeed = 45; // Anfangsgeschwindigkeit (kann angepasst werden)
+let animationSpeed = 65; // Anfangsgeschwindigkeit (kann angepasst werden)
 
 function setup() {
  
@@ -32,7 +32,7 @@ function setup() {
       .catch(() => {
         //show permission dialogue only the first time
         let button = createButton("click to allow access to sensors");
-        //button.style("font-size", "24px");
+        button.style("font-size", "30px");
         button.center();
         button.mousePressed(requestAccess);
         throw error;
@@ -172,7 +172,7 @@ class Particle {
       if (d < 190) {
         stroke(this.color);
         //strokeWeight(3);
-        strokeWeight(random(8,11));
+        strokeWeight(random(6,11));
         // Erzeuge squiggly Line mithilfe von Perlin-Noise
         beginShape();
         for (let t = -0.005; t <= 1; t += 0.125) {
