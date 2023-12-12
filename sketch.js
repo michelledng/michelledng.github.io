@@ -43,7 +43,7 @@ function setup() {
       });
   } else {
     //non IOS 13 Device
-    textSize(150);
+    textSize(180);
     //text("non ios 13 device", 100, 100);
     permissionGranted = true;
   }
@@ -172,7 +172,7 @@ class Particle {
       if (d < 140) {
         stroke(this.color);
         //strokeWeight(3);
-        strokeWeight(random(20,21));
+        strokeWeight(random(14,15));
         // Erzeuge squiggly Line mithilfe von Perlin-Noise
         beginShape();
         for (let t = -0.005; t <= 1; t += 0.125) {
