@@ -120,9 +120,9 @@ function mouseInCircle(pos, radius) {
 class Particle {
   constructor() {
     //this.pos = createVector(random(width), random(height));
-    this.pos = createVector(random(width), random(height));
+    this.pos = createVector(random(width) + 5, random(height) +2);
     this.vel = createVector(random(-0.02, 0.02), random(-0.02, 0.02));
-    this.size = 9.5;
+    this.size = 11.5;
     this.color = color(0);
   }
 
