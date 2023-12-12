@@ -130,8 +130,8 @@ class Particle {
     // Move particles based on device motion
     const dx = constrain(rotationY, -1, 1);
     const dy = constrain(rotationX, -1, 1);
-    this.pos.x += dx * 0.80;
-    this.pos.y += dy * 0.80;
+    this.pos.x += dx * 0.90;
+    this.pos.y += dy * 0.90;
 
     this.pos.add(p5.Vector.mult(this.vel, speed)); // Use speed to control the velocity
     this.edges();
@@ -169,10 +169,10 @@ class Particle {
         return; // Skip drawing if particles are too close
       }
      
-      if (d < 200) {
+      if (d < 220) {
         stroke(this.color);
         //strokeWeight(3);
-        strokeWeight(random(9,13));
+        strokeWeight(random(12,16));
         // Erzeuge squiggly Line mithilfe von Perlin-Noise
         beginShape();
         for (let t = -0.005; t <= 1; t += 0.125) {
