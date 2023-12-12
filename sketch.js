@@ -4,21 +4,26 @@ let cx, cy;
 let bg;
 const particles = [];
 let dragPoint = null;
-const numParticles = 60;
-const dragRadius = 110;
-let animationSpeed = 50; // Anfangsgeschwindigkeit (kann angepasst werden)
+const numParticles = 40;
+const dragRadius = 140;
+let animationSpeed = 22; // Anfangsgeschwindigkeit (kann angepasst werden)
+
+let video; // Declare a variable to hold the video
 
 function setup() {
- 
-  //createCanvas(960, 540);
   createCanvas(windowWidth, windowHeight);
-  //createCanvas(1080, 1920);
-  
-    cx = width / 2;
-    cy = height / 2;
-  
+
+  // Load the video
+  video = createVideo("WS_Wörter.mp4");
+  video.loop();
+  video.hide();
+
+  cx = width / 2;
+  cy = height / 2;
+
   let canvas = createCanvas(windowWidth, windowHeight);
   canvas.style('touch-action', 'none');
+  
   
   
     //DeviceOrientationEvent, DeviceMotionEvent
@@ -70,19 +75,20 @@ function setup() {
 }
 
 function draw() {
-  background(255);
-  
+  // Display the video as the background
+  image(video, 0, 0, width, height);
+
   if (!permissionGranted) return;
 
   particles.forEach((p, index) => {
-    p.update(animationSpeed); // Hier wird die Geschwindigkeit übergeben
+    p.update(animationSpeed);
     p.draw();
     p.checkParticles(particles.slice(index + 1));
   });
 
   for (let p of particles) {
     if (dragPoint === p) {
-      continue; // Skip the dragged point
+      continue;
     }
     if (mouseInCircle(p, dragRadius)) {
       cursor(HAND);
