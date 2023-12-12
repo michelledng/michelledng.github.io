@@ -4,9 +4,9 @@ let cx, cy;
 let bg;
 const particles = [];
 let dragPoint = null;
-const numParticles = 55;
+const numParticles = 50;
 const dragRadius = 110;
-let animationSpeed = 30; // Anfangsgeschwindigkeit (kann angepasst werden)
+let animationSpeed = 15; // Anfangsgeschwindigkeit (kann angepasst werden)
 
 function setup() {
  
@@ -130,8 +130,8 @@ class Particle {
     // Move particles based on device motion
     const dx = constrain(rotationY, -1, 1);
     const dy = constrain(rotationX, -1, 1);
-    this.pos.x += dx * 3;
-    this.pos.y += dy * 3;
+    this.pos.x += dx * 4;
+    this.pos.y += dy * 4;
 
     this.pos.add(p5.Vector.mult(this.vel, speed)); // Use speed to control the velocity
     this.edges();
@@ -172,7 +172,7 @@ class Particle {
       if (d < 260) {
         stroke(this.color);
         //strokeWeight(3);
-        strokeWeight(random(8,12));
+        strokeWeight(random(7.5,11));
         // Erzeuge squiggly Line mithilfe von Perlin-Noise
         beginShape();
         for (let t = -0.005; t <= 1; t += 0.125) {
