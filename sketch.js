@@ -32,7 +32,7 @@ function setup() {
       .catch(() => {
         //show permission dialogue only the first time
         let button = createButton("click to allow access to sensors");
-        button.style("font-size", "27px");
+        button.style("font-size", "35px");
         button.center();
         button.mousePressed(requestAccess);
         throw error;
@@ -172,7 +172,7 @@ class Particle {
       if (d < 205) {
         stroke(this.color);
         //strokeWeight(3);
-        strokeWeight(random(6.5,9.5));
+        strokeWeight(random(7,10));
         // Erzeuge squiggly Line mithilfe von Perlin-Noise
         beginShape();
         for (let t = -0.005; t <= 1; t += 0.125) {
