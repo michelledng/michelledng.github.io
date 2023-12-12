@@ -6,7 +6,7 @@ const particles = [];
 let dragPoint = null;
 const numParticles = 100;
 const dragRadius = 110;
-let animationSpeed = 22; // Anfangsgeschwindigkeit (kann angepasst werden)
+let animationSpeed = 30; // Anfangsgeschwindigkeit (kann angepasst werden)
 
 function setup() {
  
@@ -122,7 +122,7 @@ class Particle {
     //this.pos = createVector(random(width), random(height));
     this.pos = createVector(random(width), random(height));
     this.vel = createVector(random(-0.02, 0.02), random(-0.02, 0.02));
-    this.size = 7.5;
+    this.size = 9.5;
     this.color = color(0);
   }
 
@@ -169,10 +169,10 @@ class Particle {
         return; // Skip drawing if particles are too close
       }
      
-      if (d < 120) {
+      if (d < 140) {
         stroke(this.color);
         //strokeWeight(3);
-        strokeWeight(random(12,13));
+        strokeWeight(random(20,21));
         // Erzeuge squiggly Line mithilfe von Perlin-Noise
         beginShape();
         for (let t = -0.005; t <= 1; t += 0.125) {
