@@ -6,7 +6,7 @@ const particles = [];
 let dragPoint = null;
 const numParticles = 85;
 const dragRadius = 110;
-let animationSpeed = 65; // Anfangsgeschwindigkeit (kann angepasst werden)
+let animationSpeed = 45; // Anfangsgeschwindigkeit (kann angepasst werden)
 
 function setup() {
  
@@ -32,7 +32,7 @@ function setup() {
       .catch(() => {
         //show permission dialogue only the first time
         let button = createButton("click to allow access to sensors");
-        button.style("font-size", "80px");
+        button.style("font-size", "50px");
         button.center();
         button.mousePressed(requestAccess);
         throw error;
@@ -169,7 +169,7 @@ class Particle {
         return; // Skip drawing if particles are too close
       }
      
-      if (d < 200) {
+      if (d < 180) {
         stroke(this.color);
         //strokeWeight(3);
         strokeWeight(random(6,11));
