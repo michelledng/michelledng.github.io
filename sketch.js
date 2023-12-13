@@ -169,7 +169,7 @@ class Particle {
         return; // Skip drawing if particles are too close
       }
      
-      if (d < 220) {
+      if (d < 215) {
         stroke(this.color);
         //strokeWeight(3);
         strokeWeight(random(7,13));
