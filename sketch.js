@@ -6,7 +6,7 @@ const particles = [];
 let dragPoint = null;
 const numParticles = 60;
 const dragRadius = 110;
-let animationSpeed = 35; // Anfangsgeschwindigkeit (kann angepasst werden)
+let animationSpeed = 30; // Anfangsgeschwindigkeit (kann angepasst werden)
 
 function setup() {
  
