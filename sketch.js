@@ -6,7 +6,7 @@ const particles = [];
 let dragPoint = null;
 
 //const numParticles = 200; //Desktop
-const numParticles = 45; //Handy
+const numParticles = 50; //Handy
 
 const dragRadius = 110;
 let animationSpeed = 30; // Anfangsgeschwindigkeit (kann angepasst werden)
