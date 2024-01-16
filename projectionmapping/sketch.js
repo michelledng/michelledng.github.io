@@ -36,6 +36,11 @@ function setup() {
   
 
   
+  let canvas = createCanvas(windowWidth, windowHeight);
+  canvas.style('touch-action', 'none');
+  
+  
+    //DeviceOrientationEvent, DeviceMotionEvent
   if (
     typeof DeviceOrientation !== undefined &&
     typeof DeviceOrientationEvent.requestPermission === "function"
@@ -61,20 +66,21 @@ function setup() {
     //text("non ios 13 device", 100, 100);
     permissionGranted = true;
   }
-
-  function requestAccess() {
-    DeviceOrientationEvent.requestPermission()
-      .then((response) => {
-        if (response == "granted") {
-          permissionGranted = true;
-        } else {
-          permissionGranted = false;
-        }
-      })
-      .catch(console.error);
   
-    this.remove();
-  }
+  function requestAccess() {
+  DeviceOrientationEvent.requestPermission()
+    .then((response) => {
+      if (response == "granted") {
+        permissionGranted = true;
+      } else {
+        permissionGranted = false;
+      }
+    })
+    .catch(console.error);
+
+  this.remove();
+}
+  
 
 
 
