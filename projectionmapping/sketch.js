@@ -18,11 +18,12 @@ let poemI = 0;
 let poem = ["Perspektiven in Bewegung","26.–27.01.2024", "im Atrium", "Animationen über den studentischen Alltag"];
 
 
-
+/*
 function preload() {
   fontI = loadFont('ABCDiatype-Regular-Trial.otf');
   fontB = loadFont('TimesNewerRoman-Regular.otf');
 }
+*/
 
 
 
@@ -31,7 +32,7 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   
-   let canvas = createCanvas(windowWidth, windowHeight);
+  let canvas = createCanvas(windowWidth, windowHeight);
   canvas.style('touch-action', 'none'); // Disable touch scrolling on the canvas
   
 
