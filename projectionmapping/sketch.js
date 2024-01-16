@@ -9,6 +9,8 @@ let Bodies = Matter.Bodies;
 let engine;
 let world;
 let circles = [];
+let boundaries = [];
+
 let gravity;
 let fontI;
 
@@ -148,9 +150,6 @@ function draw() {
     circle.show();
   }
 
-  for (let boundary of boundaries) {
-    //boundary.show();
-  }
+
 }
 
-let boundaries = [];
