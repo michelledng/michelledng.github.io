@@ -45,13 +45,13 @@ function setup() {
       })
       .then(() => {
         // on any subsequent visits
-        permissionGranted = true;
+        //permissionGranted = true;
       });
   } else {
     //non IOS 13 Device
     //textSize(50);
     //text("non ios 13 device", 100, 100);
-    //permissionGranted = true;
+    permissionGranted = true;
   }
 
   let canvas = createCanvas(windowWidth, windowHeight);
