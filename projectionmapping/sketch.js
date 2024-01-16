@@ -105,7 +105,7 @@ function mouseDragged() {
 }
 
 function touchStarted() {
-  console.log("touch-start-perm":);
+  console.log("touch-start-perm");
   console.log(permissionGranted);
   if (!permissionGranted) return;
   if (touches.length > 0) {
@@ -117,7 +117,7 @@ function touchStarted() {
 }
 
 function touchMoved() {
-  console.log("touch-move-perm":);
+  console.log("touch-move-perm");
   console.log(permissionGranted);
   if (!permissionGranted) return;
   if (touches.length > 0) {
