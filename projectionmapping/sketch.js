@@ -103,7 +103,7 @@ function mouseDragged() {
     poemI = (poemI + 1) % poem.length;
   }
 }
-
+/*
 function touchStarted() {
   console.log("touch-start-perm");
   console.log(permissionGranted);
@@ -131,6 +131,7 @@ function touchMoved() {
 function touchEnded() {
   return false;
 }
+*/
 
 function removeFromWorld() {
   for (let circle of circles) {

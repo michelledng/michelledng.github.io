@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
+    <script src="p5.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8" />
 
@@ -9,27 +9,9 @@
   <body>
     <main>
     </main>
-
-    <script type="text/javascript">
-      function requestOrientationPermission(){
-          DeviceOrientationEvent.requestPermission()
-          .then(response => {
-              if (response == 'granted') {
-                  window.addEventListener('deviceorientation', (e) => {
-                  this.remove();
-                  })
-              }
-          })
-          .catch(console.error)
-      }
-  </script>
-  
-  <button onclick='requestOrientationPermission();'>Request orientation permission</button>
-  <script src="p5.js"></script>
     <script src="sketch.js"></script>
     <script src="letter.js"></script>
     <script src="boundary.js"></script>
     <script src="matter.js"></script>
-
   </body>
 </html>
