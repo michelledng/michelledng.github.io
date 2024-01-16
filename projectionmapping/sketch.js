@@ -34,13 +34,7 @@ function setup() {
   
   let canvas = createCanvas(windowWidth, windowHeight);
   canvas.style('touch-action', 'none'); // Disable touch scrolling on the canvas
-  
-
-  
-  let canvas = createCanvas(windowWidth, windowHeight);
-  canvas.style('touch-action', 'none');
-  
-  
+    
     //DeviceOrientationEvent, DeviceMotionEvent
   if (
     typeof DeviceOrientation !== undefined &&
