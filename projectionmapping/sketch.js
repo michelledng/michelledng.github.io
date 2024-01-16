@@ -45,7 +45,6 @@ function setup() {
   
 
   
-    //DeviceOrientationEvent, DeviceMotionEvent
   if (
     typeof DeviceOrientation !== undefined &&
     typeof DeviceOrientationEvent.requestPermission === "function"
@@ -71,8 +70,6 @@ function setup() {
     //text("non ios 13 device", 100, 100);
     permissionGranted = true;
   }
-
-
 
   engine = Engine.create();
   world = engine.world;
