@@ -2,9 +2,9 @@ let permissionGranted = false;
 let cx, cy;
 
 // sketch.js
-let Engine = Matter.Engine;
-let World = Matter.World;
-let Bodies = Matter.Bodies;
+// let Engine = Matter.Engine;
+// let World = Matter.World;
+// let Bodies = Matter.Bodies;
 
 let engine;
 let world;
@@ -56,19 +56,19 @@ function setup() {
     permissionGranted = true;
   }
 
-/*
-  engine = Engine.create();
-  world = engine.world;
-  gravity = world.gravity;
-  gravity.x = rotationX/10;
-  gravity.y = rotationY/10;
 
-  boundaries.push(new Boundary(width / 2, height, width, 1));
-  boundaries.push(new Boundary(width / 2, 0, width, 1));
-  boundaries.push(new Boundary(width, height / 2, 1, windowHeight * 2));
-  boundaries.push(new Boundary(0, height / 2, 1, windowHeight * 2));
+  // engine = Engine.create();
+  // world = engine.world;
+  // gravity = world.gravity;
+  // gravity.x = rotationX/10;
+  // gravity.y = rotationY/10;
 
-*/
+  // boundaries.push(new Boundary(width / 2, height, width, 1));
+  // boundaries.push(new Boundary(width / 2, 0, width, 1));
+  // boundaries.push(new Boundary(width, height / 2, 1, windowHeight * 2));
+  // boundaries.push(new Boundary(0, height / 2, 1, windowHeight * 2));
+
+
 
 }
 
