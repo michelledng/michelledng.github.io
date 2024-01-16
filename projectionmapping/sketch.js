@@ -18,12 +18,11 @@ let poemI = 0;
 let poem = ["Perspektiven in Bewegung","26.–27.01.2024", "im Atrium", "Animationen über den studentischen Alltag"];
 
 
-/*
 function preload() {
   fontI = loadFont('ABCDiatype-Regular-Trial.otf');
   fontB = loadFont('TimesNewerRoman-Regular.otf');
 }
-*/
+
 
 function setup() {
   
@@ -44,7 +43,7 @@ function setup() {
         button.style("font-size", "35px");
         button.center();
         button.mousePressed(requestAccess);
-        throw error;
+       // throw error;
       })
       .then(() => {
         // on any subsequent visits
@@ -52,12 +51,28 @@ function setup() {
       });
   } else {
     //non IOS 13 Device
-    textSize(50);
+    //textSize(50);
     //text("non ios 13 device", 100, 100);
     permissionGranted = true;
   }
-  
-  function requestAccess() {
+
+
+  engine = Engine.create();
+  world = engine.world;
+  gravity = world.gravity;
+  gravity.x = rotationX/10;
+  gravity.y = rotationY/10;
+
+  boundaries.push(new Boundary(width / 2, height, width, 1));
+  boundaries.push(new Boundary(width / 2, 0, width, 1));
+  boundaries.push(new Boundary(width, height / 2, 1, windowHeight * 2));
+  boundaries.push(new Boundary(0, height / 2, 1, windowHeight * 2));
+
+
+
+}
+
+function requestAccess() {
   DeviceOrientationEvent.requestPermission()
     .then((response) => {
       if (response == "granted") {
@@ -74,17 +89,7 @@ function setup() {
 
 
 
-  engine = Engine.create();
-  world = engine.world;
-  gravity = world.gravity;
-  gravity.x = rotationX/10;
-  gravity.y = rotationY/10;
 
-  boundaries.push(new Boundary(width / 2, height, width, 1));
-  boundaries.push(new Boundary(width / 2, 0, width, 1));
-  boundaries.push(new Boundary(width, height / 2, 1, windowHeight * 2));
-  boundaries.push(new Boundary(0, height / 2, 1, windowHeight * 2));
-}
 
 function mouseDragged() {
   if (touches.length > 0) {

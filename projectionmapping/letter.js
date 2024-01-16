@@ -47,10 +47,10 @@ function Letter(x, y, poem) {
       strokeWeight(3);
       fill(255);
       textSize(ptSize+20);
-      //textFont(fontB); // Use fontI for "Perspektiven in Bewegung"
+      textFont(fontB); // Use fontI for "Perspektiven in Bewegung"
       } else if (this.poem === "Perspektiven in Bewegung") {
       // Use Times New Roman font for "26.–27.01.2024" and "im Atrium"
-     // textFont(fontI);
+      textFont(fontI);
       stroke(255);
       strokeWeight(3);
       
@@ -58,7 +58,7 @@ function Letter(x, y, poem) {
       textSize(ptSize);
     } else if (this.poem === "26.–27.01.2024" || this.poem === "im Atrium") {
       // Use Times New Roman font for "26.–27.01.2024" and "im Atrium"
-      //textFont(fontB);
+      textFont(fontB);
       stroke(2);
       strokeWeight(3);
       fill(255);
@@ -66,7 +66,7 @@ function Letter(x, y, poem) {
     } else {
       fill(255,0,0);
       textSize(ptSize);
-      //textFont(fontI); // Use fontI for other text
+      textFont(fontI); // Use fontI for other text
     }
 
     textAlign(CENTER, CENTER);
