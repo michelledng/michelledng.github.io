@@ -33,7 +33,7 @@ function preload() {
       .catch(() => {
         //show permission dialogue only the first time
         let button = createButton("click to allow access to sensors");
-        button.style("font-size", "50px");
+        button.style("font-size", "20px");
         button.center();
         button.mousePressed(requestAccess);
         throw error;
