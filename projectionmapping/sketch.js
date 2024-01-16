@@ -13,6 +13,7 @@ let boundaries = [];
 
 let gravity;
 let fontI;
+let fontB;
 
 let poemI = 0;
 let poem = ["Perspektiven in Bewegung","26.–27.01.2024", "im Atrium", "Animationen über den studentischen Alltag"];
