@@ -23,8 +23,6 @@ function preload() {
 }
 
 
-
-
 function requestAccess() {
   DeviceOrientationEvent.requestPermission()
     .then((response) => {
