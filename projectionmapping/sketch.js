@@ -83,6 +83,9 @@ function requestAccess() {
     })
     .catch(console.error);
 
+
+  console.log("hier")
+  console.log(this)
   this.remove();
 }
   
