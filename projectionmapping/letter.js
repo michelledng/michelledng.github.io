@@ -52,7 +52,7 @@ function Letter(x, y, poem) {
       // Use Times New Roman font for "26.–27.01.2024" and "im Atrium"
       textFont(fontI);
       stroke(255);
-      strokeWeight(3);
+      strokeWeight(7);
       
       fill(0);
       textSize(ptSize+50);
