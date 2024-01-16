@@ -45,7 +45,7 @@ function setup() {
       })
       .then(() => {
         // on any subsequent visits
-        //permissionGranted = true;
+        permissionGranted = true;
       });
   } else {
     //non IOS 13 Device
@@ -59,18 +59,16 @@ function setup() {
  
 
 
-  // engine = Engine.create();
-  // world = engine.world;
-  // gravity = world.gravity;
-  // gravity.x = rotationX/10;
-  // gravity.y = rotationY/10;
+  engine = Engine.create();
+  world = engine.world;
+  gravity = world.gravity;
+  gravity.x = rotationX/10;
+  gravity.y = rotationY/10;
 
-  // boundaries.push(new Boundary(width / 2, height, width, 1));
-  // boundaries.push(new Boundary(width / 2, 0, width, 1));
-  // boundaries.push(new Boundary(width, height / 2, 1, windowHeight * 2));
-  // boundaries.push(new Boundary(0, height / 2, 1, windowHeight * 2));
-
-
+  boundaries.push(new Boundary(width / 2, height, width, 1));
+  boundaries.push(new Boundary(width / 2, 0, width, 1));
+  boundaries.push(new Boundary(width, height / 2, 1, windowHeight * 2));
+  boundaries.push(new Boundary(0, height / 2, 1, windowHeight * 2));
 
 }
 
@@ -85,15 +83,11 @@ function requestAccess() {
     })
     .catch(console.error);
 
-
-  console.log("hier");
-  //console.log(this);
   this.remove();
 }
   
 
 function mouseDragged() {
-  if (!permissionGranted) return;
   if (touches.length > 0) {
     let touch = touches[0];
     circles.push(new Letter(touch.x, touch.y, poem[poemI]));
@@ -105,9 +99,6 @@ function mouseDragged() {
 }
 /*
 function touchStarted() {
-  console.log("touch-start-perm");
-  console.log(permissionGranted);
-  if (!permissionGranted) return;
   if (touches.length > 0) {
     let touch = touches[0];
     circles.push(new Letter(touch.x, touch.y, poem[poemI]));
@@ -117,9 +108,6 @@ function touchStarted() {
 }
 
 function touchMoved() {
-  console.log("touch-move-perm");
-  console.log(permissionGranted);
-  if (!permissionGranted) return;
   if (touches.length > 0) {
     let touch = touches[0];
     circles.push(new Letter(touch.x, touch.y, poem[poemI]));
