@@ -1,10 +1,10 @@
 let permissionGranted = false;
 let cx, cy;
 
-// sketch.js
-// let Engine = Matter.Engine;
-// let World = Matter.World;
-// let Bodies = Matter.Bodies;
+
+let Engine = Matter.Engine;
+let World = Matter.World;
+let Bodies = Matter.Bodies;
 
 let engine;
 let world;
