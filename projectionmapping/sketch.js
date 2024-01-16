@@ -22,7 +22,11 @@ function preload() {
   fontB = loadFont('TimesNewerRoman-Regular.otf');
 }
 
-  //DeviceOrientationEvent, DeviceMotionEvent
+let canvas = createCanvas(windowWidth, windowHeight);
+  canvas.style('touch-action', 'none');
+  
+  
+    //DeviceOrientationEvent, DeviceMotionEvent
   if (
     typeof DeviceOrientation !== undefined &&
     typeof DeviceOrientationEvent.requestPermission === "function"
@@ -33,7 +37,7 @@ function preload() {
       .catch(() => {
         //show permission dialogue only the first time
         let button = createButton("click to allow access to sensors");
-        button.style("font-size", "20px");
+        button.style("font-size", "35px");
         button.center();
         button.mousePressed(requestAccess);
         throw error;
@@ -44,9 +48,10 @@ function preload() {
       });
   } else {
     //non IOS 13 Device
+    textSize(50);
+    //text("non ios 13 device", 100, 100);
     permissionGranted = true;
   }
-
 
 function requestAccess() {
   DeviceOrientationEvent.requestPermission()
