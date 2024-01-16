@@ -46,7 +46,7 @@ function Letter(x, y, poem) {
      stroke(0);
       strokeWeight(3);
       fill(255);
-      textSize(ptSize+60);
+      textSize(ptSize+20);
       textFont(fontB); // Use fontI for "Perspektiven in Bewegung"
       } else if (this.poem === "Perspektiven in Bewegung") {
       // Use Times New Roman font for "26.–27.01.2024" and "im Atrium"
