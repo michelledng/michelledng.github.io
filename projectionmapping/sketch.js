@@ -26,9 +26,7 @@ function preload() {
 
 function setup() {
   
-  let canvas = createCanvas(windowWidth, windowHeight);
-  canvas.style('touch-action', 'none'); // Disable touch scrolling on the canvas
-    
+   
     //DeviceOrientationEvent, DeviceMotionEvent
   if (
     typeof DeviceOrientation !== undefined &&
@@ -55,6 +53,10 @@ function setup() {
     //text("non ios 13 device", 100, 100);
     permissionGranted = true;
   }
+
+  let canvas = createCanvas(windowWidth, windowHeight);
+  canvas.style('touch-action', 'none'); // Disable touch scrolling on the canvas
+ 
 
 
   // engine = Engine.create();
