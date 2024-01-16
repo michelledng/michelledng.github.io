@@ -22,9 +22,30 @@ function preload() {
   fontB = loadFont('TimesNewerRoman-Regular.otf');
 }
 
-let canvas = createCanvas(windowWidth, windowHeight);
-canvas.style('touch-action', 'none');
+
+
+
+function requestAccess() {
+  DeviceOrientationEvent.requestPermission()
+    .then((response) => {
+      if (response == "granted") {
+        permissionGranted = true;
+      } else {
+        permissionGranted = false;
+      }
+    })
+    .catch(console.error);
+
+  this.remove();
+}
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
   
+   let canvas = createCanvas(windowWidth, windowHeight);
+  canvas.style('touch-action', 'none'); // Disable touch scrolling on the canvas
+  
+
   
     //DeviceOrientationEvent, DeviceMotionEvent
   if (
@@ -53,26 +74,8 @@ canvas.style('touch-action', 'none');
     permissionGranted = true;
   }
 
-function requestAccess() {
-  DeviceOrientationEvent.requestPermission()
-    .then((response) => {
-      if (response == "granted") {
-        permissionGranted = true;
-      } else {
-        permissionGranted = false;
-      }
-    })
-    .catch(console.error);
 
-  this.remove();
-}
 
-function setup() {
-  createCanvas(windowWidth, windowHeight);
-  
-   let canvas = createCanvas(windowWidth, windowHeight);
-  canvas.style('touch-action', 'none'); // Disable touch scrolling on the canvas
-  
   engine = Engine.create();
   world = engine.world;
   gravity = world.gravity;
