@@ -25,12 +25,7 @@ function preload() {
 }
 */
 
-
-
-  
-
 function setup() {
-  createCanvas(windowWidth, windowHeight);
   
   let canvas = createCanvas(windowWidth, windowHeight);
   canvas.style('touch-action', 'none'); // Disable touch scrolling on the canvas
