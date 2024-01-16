@@ -22,6 +22,46 @@ function preload() {
   fontB = loadFont('TimesNewerRoman-Regular.otf');
 }
 
+  //DeviceOrientationEvent, DeviceMotionEvent
+  if (
+    typeof DeviceOrientation !== undefined &&
+    typeof DeviceOrientationEvent.requestPermission === "function"
+  ) {
+    // ios 13 device
+
+    DeviceOrientationEvent.requestPermission()
+      .catch(() => {
+        //show permission dialogue only the first time
+        let button = createButton("click to allow access to sensors");
+        //button.style("font-size", "24px");
+        button.center();
+        button.mousePressed(requestAccess);
+        throw error;
+      })
+      .then(() => {
+        // on any subsequent visits
+        permissionGranted = true;
+      });
+  } else {
+    //non IOS 13 Device
+    permissionGranted = true;
+  }
+
+
+function requestAccess() {
+  DeviceOrientationEvent.requestPermission()
+    .then((response) => {
+      if (response == "granted") {
+        permissionGranted = true;
+      } else {
+        permissionGranted = false;
+      }
+    })
+    .catch(console.error);
+
+  this.remove();
+}
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   
@@ -77,46 +117,6 @@ function removeFromWorld() {
   for (let circle of circles) {
     World.remove(world, circle.body);
   }
-}
-
-  //DeviceOrientationEvent, DeviceMotionEvent
-  if (
-    typeof DeviceOrientation !== undefined &&
-    typeof DeviceOrientationEvent.requestPermission === "function"
-  ) {
-    // ios 13 device
-
-    DeviceOrientationEvent.requestPermission()
-      .catch(() => {
-        //show permission dialogue only the first time
-        let button = createButton("click to allow access to sensors");
-        //button.style("font-size", "24px");
-        button.center();
-        button.mousePressed(requestAccess);
-        throw error;
-      })
-      .then(() => {
-        // on any subsequent visits
-        permissionGranted = true;
-      });
-  } else {
-    //non IOS 13 Device
-    permissionGranted = true;
-  }
-
-
-function requestAccess() {
-  DeviceOrientationEvent.requestPermission()
-    .then((response) => {
-      if (response == "granted") {
-        permissionGranted = true;
-      } else {
-        permissionGranted = false;
-      }
-    })
-    .catch(console.error);
-
-  this.remove();
 }
 
 function draw() {
