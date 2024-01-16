@@ -90,11 +90,8 @@ function requestAccess() {
 }
   
 
-
-
-
-
 function mouseDragged() {
+  if (!permissionGranted) return;
   if (touches.length > 0) {
     let touch = touches[0];
     circles.push(new Letter(touch.x, touch.y, poem[poemI]));
@@ -106,6 +103,7 @@ function mouseDragged() {
 }
 
 function touchStarted() {
+  if (!permissionGranted) return;
   if (touches.length > 0) {
     let touch = touches[0];
     circles.push(new Letter(touch.x, touch.y, poem[poemI]));
@@ -115,6 +113,7 @@ function touchStarted() {
 }
 
 function touchMoved() {
+  if (!permissionGranted) return;
   if (touches.length > 0) {
     let touch = touches[0];
     circles.push(new Letter(touch.x, touch.y, poem[poemI]));
