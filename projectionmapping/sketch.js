@@ -23,7 +23,7 @@ function preload() {
 }
 
 let canvas = createCanvas(windowWidth, windowHeight);
-  canvas.style('touch-action', 'none');
+canvas.style('touch-action', 'none');
   
   
     //DeviceOrientationEvent, DeviceMotionEvent
@@ -129,6 +129,9 @@ function draw() {
   //background(233);
   //background(233);
   Engine.update(engine);
+
+
+  if (!permissionGranted) return;
 
   const dx = constrain(rotationY, -0.1, 0.1);
   const dy = constrain(rotationX, -0.1, 0.1);
