@@ -51,7 +51,7 @@ function setup() {
     //non IOS 13 Device
     //textSize(50);
     //text("non ios 13 device", 100, 100);
-    permissionGranted = true;
+    //permissionGranted = true;
   }
 
   let canvas = createCanvas(windowWidth, windowHeight);
