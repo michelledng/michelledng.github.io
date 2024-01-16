@@ -55,7 +55,7 @@ function Letter(x, y, poem) {
       strokeWeight(3);
       
       fill(0);
-      textSize(ptSize);
+      textSize(ptSize+50);
     } else if (this.poem === "26.–27.01.2024" || this.poem === "im Atrium") {
       // Use Times New Roman font for "26.–27.01.2024" and "im Atrium"
       textFont(fontB);

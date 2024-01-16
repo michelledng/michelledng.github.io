@@ -131,19 +131,14 @@ function removeFromWorld() {
 function draw() {
   //background(100,100,300);
   //background(233);
-  //background(233);
  
   if (!permissionGranted) return;
 
   Engine.update(engine);
-  console.log(rotationX);
+
   const dx = constrain(rotationY, -0.1, 0.1);
   const dy = constrain(rotationX, -0.1, 0.1);
-  // cx += dx*1;
-  // cy += dy*1;
-  // cx = constrain(cx, 0, width);
-  // cy = constrain (cy, 0, height);
-
+  
   for (let circle of circles) {
     circle.updatePosition(dx, dy);
     circle.show();
