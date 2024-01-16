@@ -56,7 +56,7 @@ function setup() {
     permissionGranted = true;
   }
 
-
+/*
   engine = Engine.create();
   world = engine.world;
   gravity = world.gravity;
@@ -68,7 +68,7 @@ function setup() {
   boundaries.push(new Boundary(width, height / 2, 1, windowHeight * 2));
   boundaries.push(new Boundary(0, height / 2, 1, windowHeight * 2));
 
-
+*/
 
 }
 
